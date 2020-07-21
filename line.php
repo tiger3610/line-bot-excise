@@ -64,6 +64,9 @@ if ( sizeof($request_array['events']) > 0 )
 		   $reply_message = '42 องศาเซลเซียส';
 	   }
 	   
+	   if($text == "สวัสดี"){
+		   $reply_message = 'ครับ!! สวัสีครับ รุ่น2';
+	   }	
 	   
 	   
 	   $split_text = explode(" ", $text);
