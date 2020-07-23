@@ -65,7 +65,7 @@ if ( sizeof($request_array['events']) > 0 )
 	   }
 	   
 	   if($text == "สวัสดี"){
-		   $reply_message = 'ครับ!! สวัสีครับ รุ่น2';
+		   $reply_message = 'นอนแล้วววววว+++';
 	   }	
 	   
 	   
