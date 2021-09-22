@@ -15,7 +15,7 @@ foreach ($request_json['events'] as $event)
 			$text = $event['message']['text'];
 			
 			if($text == "รถแบบผมเข้าพิกัดเสียภาษีหรือไหมครับ?"){
-				int number = random_int(0,2);
+				int number = rand(0,1);
 				if(number == 0){
 					$reply_message = 'อยู่พิกัดการเสียภาษี (ผลิต/ดัดแปลงสภาพรถยนต์หรือยานพาหนะ)'; 
 				}else{
