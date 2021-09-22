@@ -1,6 +1,6 @@
 <?php
 
-$channelAccessToken = 'xP651GuqdRAknY5o3uARkVOWyMj8EbT6vIcUrKjqS7eBULP2tK0P8YEhQUtzpeyBnx4ycmoz4sEpHhLHF2b5cJqsOHfHjTq3FiJxbyjEoGTjeHz3vNSjzjJgcpGql18ZVpvC3sa6OcEnkivl15BXjwdB04t89/1O/w1cDnyilFU='; // Access Token ค่าที่เราสร้างขึ้น
+$channelAccessToken = 'sFytT74kbTkH4MgXJYEXgI8j20vTuuMHxINHEXfNoiKGSJrRVerMTvxxo2uV2RY6JWEH6EqNipsErAFSGGUnDkkWrNjgZ6aLvK/XaUKAK2pSG9gBWXowhI7jfF5oBkprPg4+lDoTKd3a6EvjaoumTAdB04t89/1O/w1cDnyilFU='; // Access Token ค่าที่เราสร้างขึ้น
 
 $request = file_get_contents('php://input');   // Get request content
 
