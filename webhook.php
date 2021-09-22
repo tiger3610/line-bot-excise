@@ -14,8 +14,15 @@ foreach ($request_json['events'] as $event)
 		{
 			$text = $event['message']['text'];
 			
-			$reply_message = 'ฉันได้รับข้อความ "'. $text.'" ของคุณแล้ว!'; 
-			
+			if($text == "รถแบบผมเข้าพิกัดเสียภาษีหรือไหมครับ?"){
+				if(true){
+					$reply_message = 'อยู่พิกัดการเสียภาษี (ผลิต/ดัดแปลงสภาพรถยนต์หรือยานพาหนะ)'; 
+				}else{
+					$reply_message = 'ไม่อยู่พิกัดการเสียภาษี!!!'; 
+				}
+			}else{
+				$reply_message = 'ฉันได้รับข้อความ "'. $text.'" ของคุณแล้ว!';
+			}			
 		} else {
 			$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
 		}
