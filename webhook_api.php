@@ -24,10 +24,6 @@ foreach ($request_json['events'] as $event)
 					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[3]);
 				}else if($texts[1] == "ขอสรุปการเปรียบเทียบรการใช้พลังงาน"){
 					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[4]);					
-				}else if($texts[1] == "เปิดน้ำทั้งหมด"){
-					$reply_message = mySQL_SET('http://bot.kantit.com/json_set.php?cmd=on');
-				}else if($texts[1] == "ปิดน้ำทั้งหมด"){
-					$reply_message = mySQL_SET('http://bot.kantit.com/json_set.php?cmd=off');
 				}else if($texts[1] == "กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564" || 
 					 $texts[1] == "พิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564" || 
 					 $texts[1] == "พิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2)" ||
@@ -39,7 +35,7 @@ foreach ($request_json['events'] as $event)
 					 $texts[1] == "การต่อใบอนุญาตขายยาสูบ" ||
 					 $texts[1] == "การต่อใบอนุญาตขายไพ่" ||
 					 $texts[1] == "ใบอนุญาต" ||
-					 $texts[1] == "การต่อใบอนุญาต"
+					 $texts[1] == "การต่อใบอนุญาต" ||
 					 $texts[1] == "สุรา ยาสูบ ไพ่" ||
 					 $texts[1] == "สุรา" ||
 					 $texts[1] == "ยาสูบ" ||  
@@ -49,11 +45,10 @@ foreach ($request_json['events'] as $event)
 					$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
 					$reply_message .= "พิมพ์ว่า \"@บอท พิกัดอัตราภาษีสรรพสามิต\"\n";
 					$reply_message .= "พิมพ์ว่า \"@บอท อัตราภาษีสรรพสามิตรถยนต์\"\n";
-					$reply_message .= "พิมพ์ว่า \"@บอท ขั้นตอนการขอใบอนุญาตขายสุรา\"\r\n";
+					$reply_message .= "พิมพ์ว่า \"@บอท ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
 					$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 				}
-			}	
-		
+			}		
 		} else {
 			//$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
 		}
