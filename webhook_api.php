@@ -23,7 +23,19 @@ foreach ($request_json['events'] as $event)
 				$reply_message .= "พิมพ์ว่า \"@บอท ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
 				$reply_message .= "พิมพ์ว่า \"@บอท กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
 				$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
-			}		
+			}
+			if($texts[1] == "อ่านเลขมิเตอร์ไฟฟ้า"){
+					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
+				}else if($texts[1] == "อ่านเลขมิเตอร์น้ำ"){
+					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[3]);
+				}else if($texts[1] == "ขอสรุปการเปรียบเทียบรการใช้พลังงาน"){
+					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[4]);					
+				}else if($texts[1] == "เปิดน้ำทั้งหมด"){
+					$reply_message = mySQL_SET('http://bot.kantit.com/json_set.php?cmd=on');
+				}else if($texts[1] == "ปิดน้ำทั้งหมด"){
+					$reply_message = mySQL_SET('http://bot.kantit.com/json_set.php?cmd=off');
+				}
+			
 		} else {
 			//$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
 		}		
