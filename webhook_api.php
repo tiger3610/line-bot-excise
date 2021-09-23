@@ -18,11 +18,11 @@ foreach ($request_json['events'] as $event)
 			
 			if($text == "@บอท" || $texts[0] == "@บอท"){
 				$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
-				$reply_message .= "พิมพ์ว่า \"@บอท พิกัดอัตราภาษีสรรพสามิต\"\n";
-				$reply_message .= "พิมพ์ว่า \"@บอท อัตราภาษีสรรพสามิตรถยนต์\"\n";
-				$reply_message .= "พิมพ์ว่า \"@บอท ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
-				$reply_message .= "พิมพ์ว่า \"@บอท กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
-				$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
+				$reply_message .= "พิมพ์ว่า \"พิกัดอัตราภาษีสรรพสามิต\"\n";
+				$reply_message .= "พิมพ์ว่า \"อัตราภาษีสรรพสามิตรถยนต์\"\n";
+				$reply_message .= "พิมพ์ว่า \"ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
+				$reply_message .= "พิมพ์ว่า \"กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
+				$reply_message .= "พิมพ์ว่า \"การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 			}
 			if($text == "พิกัดอัตราภาษีสรรพสามิต"){
 				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
@@ -32,7 +32,14 @@ foreach ($request_json['events'] as $event)
 					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[1]);					
 			}else if($text == "กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564"){
 				$reply_message = "https://webdev.excise.go.th/act2560/ministerial-regulations/685-2-256";
-			}else if($text == "การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)"){
+			}else if($text == "การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)" ||
+				$text == "การต่อใบอนุญาตขายสุรา" ||
+				$text == "การต่อใบอนุญาตขายยาสูบ" || 
+				$text == "การต่อใบอนุญาตขายไพ่" ||
+				$text == "สุรา" ||
+				$text == "ยาสูบ" ||
+				$text == "ไพ่" ||
+				){
 				$reply_message = "https://www.excise.go.th/cs/groups/public/documents/document/dwnt/nde1/~edisp/uatucm415648.jpg";
 			}
 			
