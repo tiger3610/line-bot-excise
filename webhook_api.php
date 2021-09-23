@@ -39,7 +39,7 @@ foreach ($request_json['events'] as $event)
 					 $texts[1] == "สุรา ยาสูบ ไพ่" ||
 					 $texts[1] == "สุรา" ||
 					 $texts[1] == "ยาสูบ" ||  
-					 $texts[1] == "ไพ่" ||){
+					 $texts[1] == "ไพ่"){
 					$reply_message = "https://webdev.excise.go.th/act2560/ministerial-regulations/685-2-256";
 				}else{
 					$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
