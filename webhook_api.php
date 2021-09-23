@@ -24,17 +24,17 @@ foreach ($request_json['events'] as $event)
 				$reply_message .= "พิมพ์ว่า \"@บอท กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
 				$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 			}
-			if($texts[1] == "อ่านเลขมิเตอร์ไฟฟ้า"){
-					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
-				}else if($texts[1] == "อ่านเลขมิเตอร์น้ำ"){
-					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[3]);
-				}else if($texts[1] == "ขอสรุปการเปรียบเทียบรการใช้พลังงาน"){
-					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[4]);					
-				}else if($texts[1] == "เปิดน้ำทั้งหมด"){
-					$reply_message = mySQL_SET('http://bot.kantit.com/json_set.php?cmd=on');
-				}else if($texts[1] == "ปิดน้ำทั้งหมด"){
-					$reply_message = mySQL_SET('http://bot.kantit.com/json_set.php?cmd=off');
-				}
+			if($texts == "พิกัดอัตราภาษีสรรพสามิต"){
+				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
+			}else if($texts == "อัตราภาษีสรรพสามิตรถยนต์ำ"){
+				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[1]);
+			}else if($texts == "ขั้นตอนการขอใบอนุญาตขายสุรา"){
+					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[1]);					
+			}else if($texts == "กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564"){
+				$reply_message = "https://webdev.excise.go.th/act2560/ministerial-regulations/685-2-256";
+			}else if($texts == "การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)"){
+				$reply_message = "https://www.excise.go.th/cs/groups/public/documents/document/dwnt/nde1/~edisp/uatucm415648.jpg";
+			}
 			
 		} else {
 			//$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
