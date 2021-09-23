@@ -24,15 +24,15 @@ foreach ($request_json['events'] as $event)
 				$reply_message .= "พิมพ์ว่า \"@บอท กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
 				$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 			}
-			if($texts == "พิกัดอัตราภาษีสรรพสามิต"){
+			if($text == "พิกัดอัตราภาษีสรรพสามิต"){
 				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
-			}else if($texts == "อัตราภาษีสรรพสามิตรถยนต์ำ"){
+			}else if($text == "อัตราภาษีสรรพสามิตรถยนต์ำ"){
 				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[1]);
-			}else if($texts == "ขั้นตอนการขอใบอนุญาตขายสุรา"){
+			}else if($text == "ขั้นตอนการขอใบอนุญาตขายสุรา"){
 					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[1]);					
-			}else if($texts == "กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564"){
+			}else if($text == "กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564"){
 				$reply_message = "https://webdev.excise.go.th/act2560/ministerial-regulations/685-2-256";
-			}else if($texts == "การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)"){
+			}else if($text == "การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)"){
 				$reply_message = "https://www.excise.go.th/cs/groups/public/documents/document/dwnt/nde1/~edisp/uatucm415648.jpg";
 			}
 			
