@@ -40,7 +40,7 @@ foreach ($request_json['events'] as $event)
 					 $texts[1] == "สุรา" ||
 					 $texts[1] == "ยาสูบ" ||  
 					 $texts[1] == "ไพ่"){
-					$reply_message = "https://webdev.excise.go.th/act2560/ministerial-regulations/685-2-256";
+					$reply_message = "https://www.excise.go.th/cs/groups/public/documents/document/dwnt/nde1/~edisp/uatucm415648.jpg";
 				}else{
 					$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
 					$reply_message .= "พิมพ์ว่า \"@บอท พิกัดอัตราภาษีสรรพสามิต\"\n";
