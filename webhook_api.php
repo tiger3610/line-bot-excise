@@ -38,8 +38,7 @@ foreach ($request_json['events'] as $event)
 				$text == "การต่อใบอนุญาตขายไพ่" ||
 				$text == "สุรา" ||
 				$text == "ยาสูบ" ||
-				$text == "ไพ่" ||
-				){
+				$text == "ไพ่"){
 				$reply_message = "https://www.excise.go.th/cs/groups/public/documents/document/dwnt/nde1/~edisp/uatucm415648.jpg";
 			}
 			
