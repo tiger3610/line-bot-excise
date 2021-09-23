@@ -16,44 +16,17 @@ foreach ($request_json['events'] as $event)
 			
 			$texts = explode(" ", $text);
 			
-			if($text == "@บอท" || $texts[0] == "@บอท"){	
-				
-				if($texts[1] == "อัตราภาษีสรรพสามิตรถยนต์"){
-					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
-				}else if($texts[1] == "อัตราภาษีสรรพสามิต"){
-					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[3]);
-				}else if($texts[1] == "ขอสรุปการเปรียบเทียบรการใช้พลังงาน"){
-					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$texts[4]);					
-				}else if($texts[1] == "กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564" || 
-					 $texts[1] == "พิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564" || 
-					 $texts[1] == "พิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2)" ||
-					 $texts[1] == "พิกัดอัตราภาษีสรรพสามิต ฉบับที่ 2" ||
-					 $texts[1] == "พิกัดอัตราภาษีสรรพสามิต"){
-					$reply_message = "https://webdev.excise.go.th/act2560/ministerial-regulations/685-2-256";
-				}else if($texts[1] == "การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)" || 
-					 $texts[1] == "การต่อใบอนุญาตขายสุรา" || 
-					 $texts[1] == "การต่อใบอนุญาตขายยาสูบ" ||
-					 $texts[1] == "การต่อใบอนุญาตขายไพ่" ||
-					 $texts[1] == "ใบอนุญาต" ||
-					 $texts[1] == "การต่อใบอนุญาต" ||
-					 $texts[1] == "สุรา ยาสูบ ไพ่" ||
-					 $texts[1] == "สุรา" ||
-					 $texts[1] == "ยาสูบ" ||  
-					 $texts[1] == "ไพ่"){
-					$reply_message = "https://www.excise.go.th/cs/groups/public/documents/document/dwnt/nde1/~edisp/uatucm415648.jpg";
-				}else{
-					$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
-					$reply_message .= "พิมพ์ว่า \"@บอท พิกัดอัตราภาษีสรรพสามิต\"\n";
-					$reply_message .= "พิมพ์ว่า \"@บอท อัตราภาษีสรรพสามิตรถยนต์\"\n";
-					$reply_message .= "พิมพ์ว่า \"@บอท ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
-					$reply_message .= "พิมพ์ว่า \"@บอท กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
-					$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
-				}
+			if($text == "@บอท" || $texts[0] == "@บอท"){
+				$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
+				$reply_message .= "พิมพ์ว่า \"@บอท พิกัดอัตราภาษีสรรพสามิต\"\n";
+				$reply_message .= "พิมพ์ว่า \"@บอท อัตราภาษีสรรพสามิตรถยนต์\"\n";
+				$reply_message .= "พิมพ์ว่า \"@บอท ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
+				$reply_message .= "พิมพ์ว่า \"@บอท กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
+				$reply_message .= "พิมพ์ว่า \"@บอท การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 			}		
 		} else {
 			//$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
-		}
-		
+		}		
 	} else {
 		$reply_message = 'ฉันได้รับ Event "' . $event['type'] . '" ของคุณแล้ว!';
 	}
