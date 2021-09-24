@@ -26,7 +26,7 @@ foreach ($request_json['events'] as $event)
 				$reply_message .= "พิมพ์ว่า \"การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 			}
 			if($text == "ใบอนุญาตขายสุรา ยาสูบ และไพ่"){
-				$reply_message = 'http://www.kantit.com/download/excise.jpg';
+				$reply_message = "http://www.kantit.com/download/excise.jpg";
 			}
 			else if($text == "พิกัดอัตราภาษีสรรพสามิต"){
 				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
