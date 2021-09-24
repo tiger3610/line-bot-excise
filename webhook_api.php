@@ -25,7 +25,10 @@ foreach ($request_json['events'] as $event)
 				$reply_message .= "พิมพ์ว่า \"กำหนดประเภทสินค้าตามพิกัดอัตราภาษีสรรพสามิต (ฉบับที่ 2) พ.ศ. 2564\"\n";
 				$reply_message .= "พิมพ์ว่า \"การต่อใบอนุญาตขายสุรา ยาสูบ ไพ่ (สำหรับรายเดิม)\"\r\n";
 			}
-			if($text == "พิกัดอัตราภาษีสรรพสามิต"){
+			if($text == "ใบอนุญาตขายสุรา ยาสูบ และไพ่"){
+				$reply_message = mySQL_selectAll('http://www.kantit.com/download/excise.jpg');
+			}
+			else if($text == "พิกัดอัตราภาษีสรรพสามิต"){
 				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
 			}else if($text == "อัตราภาษีสรรพสามิตรถยนต์ำ"){
 				$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$texts[1]);
